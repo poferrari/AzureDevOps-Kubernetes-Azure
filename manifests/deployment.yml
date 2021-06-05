@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: siteconsultarepos 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: siteconsultarepos
+  template:
+    metadata:
+      labels:
+        app: siteconsultarepos 
+    spec:
+      containers:
+        - name: siteconsultarepos 
+          image: gestaoprofissionalapi.azurecr.io/siteconsultarepos
+          ports:
+          - containerPort: 80
